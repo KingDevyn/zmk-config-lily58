@@ -43,6 +43,15 @@
             #binding-cells = <0>;
             mods = <(MOD_LCTL|MOD_LSFT|MOD_LALT)>;
         };
+
+        kp_tap_kp_hold: kp_tap_kp_hold {
+            compatible = "zmk,behavior-hold-tap";
+            label = "KP_TAP_KP_HOLD";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <500>;
+        };
     };
 
     keymap {
@@ -59,11 +68,11 @@
             //                     | ALT  | GUI  | LOWER|  SPACE |  | ENTER | RAISE| BSPC  | GUI   |
 
             bindings = <
-&kp ESC           &kp N1  &kp N2  &kp N3    &kp N4    &kp N5                             &kp N6  &kp N7    &kp N8                   &kp N9   &kp N0    &bsp_or_del
-&kp TAB           &kp Q   &kp W   &kp E     &kp R     &kp T                              &kp Y   &kp U     &kp I                    &kp O    &kp P     &kp UNDERSCORE
-&kp LEFT_SHIFT    &kp A   &kp S   &kp D     &kp F     &kp G                              &kp H   &kp J     &kp K                    &kp L    &kp SEMI  &kp SQT
-&kp LEFT_CONTROL  &kp Z   &kp X   &kp C     &kp V     &kp B   &kp LBKT     &kp RBKT      &kp N   &kp M     &kp COMMA                &kp DOT  &kp FSLH  &kp ENTER
-                                  &kp LALT  &kp LGUI  &mo 2   &kp SPACE    &spc_or_entr  &mo 1   &kp BSPC  &kp_tap_tog_hold 0 RGUI
+&kp ESC           &kp N1  &kp N2  &kp N3                       &kp N4        &kp N5                             &kp N6  &kp N7    &kp N8                   &kp N9   &kp N0    &bsp_or_del
+&kp TAB           &kp Q   &kp W   &kp E                        &kp R         &kp T                              &kp Y   &kp U     &kp I                    &kp O    &kp P     &kp UNDERSCORE
+&kp LEFT_SHIFT    &kp A   &kp S   &kp D                        &kp F         &kp G                              &kp H   &kp J     &kp K                    &kp L    &kp SEMI  &kp_tap_kp_hold RIGHT_SHIFT APOS
+&kp LEFT_CONTROL  &kp Z   &kp X   &kp C                        &kp V         &kp B   &kp LBKT     &kp RBKT      &kp N   &kp M     &kp COMMA                &kp DOT  &kp FSLH  &kp ENTER
+                                  &kp_tap_tog_hold 0 LEFT_GUI  &kp LEFT_ALT  &mo 4   &kp SPACE    &spc_or_entr  &mo 1   &kp BSPC  &kp_tap_tog_hold 0 RGUI
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -101,24 +110,44 @@
             //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&kp F12  &kp F1  &kp F2          &kp F3          &kp F4           &kp F5                       &kp F6       &kp F6                &kp F8                 &kp F9      &kp F10            &kp F11
-&trans   &trans  &trans          &kp UP_ARROW    &trans           &trans                       &kp GRAVE    &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp DOLLAR  &kp BACKSLASH      &kp KP_MINUS
-&trans   &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans                       &kp HASH     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none       &kp DOUBLE_QUOTES  &kp TILDE
-&trans   &trans  &trans          &trans          &trans           &trans  &trans    &trans     &kp AT_SIGN  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &trans      &kp SINGLE_QUOTE   &trans
+&kp F12  &kp F1  &kp F2          &kp F3          &kp F4           &kp F5                       &kp F6       &kp F6                &kp F8                 &kp F9           &kp F10            &kp F11
+&trans   &trans  &trans          &kp UP_ARROW    &trans           &trans                       &kp GRAVE    &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp DOLLAR       &kp BACKSLASH      &kp KP_MINUS
+&trans   &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans                       &kp HASH     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &none            &kp DOUBLE_QUOTES  &kp TILDE
+&trans   &trans  &trans          &trans          &trans           &trans  &trans    &trans     &kp AT_SIGN  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp EXCLAMATION  &kp SINGLE_QUOTE   &trans
                                  &trans          &trans           &trans  &trans    &kp ENTER  &trans       &trans                &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
         };
 
+        numpad_right {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans                    &kp STAR  &kp N7  &kp N8  &kp N9   &kp MINUS  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &kp STAR  &kp N4  &kp N5  &kp N6   &kp PLUS   &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &kp FSLH  &kp N1  &kp N2  &kp N3   &kp RET    &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp FSLH  &kp N0  &kp N0  &kp DOT  &kp RET    &kp RET
+                        &trans  &trans  &trans  &trans    &trans  &trans    &trans  &trans
+            >;
+        };
+
+        numpad_left {
+            bindings = <
+&kp KP_NUMLOCK  &kp STAR  &kp N7  &kp N8  &kp N9   &kp MINUS                    &trans  &trans  &trans  &trans  &trans  &trans
+&trans          &kp STAR  &kp N4  &kp N5  &kp N6   &kp PLUS                     &trans  &trans  &trans  &trans  &trans  &trans
+&trans          &kp FSLH  &kp N1  &kp N2  &kp N3   &kp RET                      &trans  &trans  &trans  &trans  &trans  &trans
+&trans          &kp FSLH  &kp N0  &kp N0  &kp DOT  &kp RET    &trans    &trans  &trans  &trans  &trans  &trans  &trans  &trans
+                                  &trans  &trans   &trans     &trans    &trans  &trans  &trans  &trans
+            >;
+        };
+
         custom_functions {
             display-name = "Custom";
             bindings = <
-&bt BT_CLR_ALL   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                  &studio_unlock  &none  &none       &none  &none  &none
-&none            &none         &none         &none         &none         &none                         &none           &none  &none       &none  &none  &none
-&none            &none         &none         &none         &none         &none                         &none           &none  &none       &none  &none  &none
-&rgb_ug RGB_TOG  &none         &none         &none         &none         &none         &none    &none  &none           &none  &none       &none  &none  &bl BL_TOG
-                                             &none         &none         &none         &none    &none  &none           &none  &sys_reset
+&bt BT_CLR_ALL                  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4                  &kp PRINTSCREEN  &kp SCROLLLOCK  &kp PAUSE_BREAK  &none  &none  &studio_unlock
+&none                           &none         &none         &none         &none         &none                         &kp INSERT       &kp HOME        &kp PAGE_UP      &none  &none  &none
+&rgb_ug RGB_COLOR_HSB(0,0,100)  &none         &none         &none         &none         &none                         &kp DELETE       &kp END         &kp PAGE_DOWN    &none  &none  &bl BL_SET 100
+&rgb_ug RGB_TOG                 &none         &none         &none         &none         &none         &none    &none  &none            &none           &none            &none  &none  &bl BL_TOG
+                                                            &none         &none         &none         &none    &none  &none            &none           &sys_reset
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -129,8 +158,8 @@
         compatible = "zmk,conditional-layers";
 
         raise_and_lower {
-            if-layers = <1 2>;
-            then-layer = <3>;
+            if-layers = <1 4>;
+            then-layer = <5>;
         };
     };
 };
