@@ -49,7 +49,7 @@
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
-            tapping-term-ms = <500>;
+            tapping-term-ms = <400>;
         };
 
         undrscr_or_dsh: undrscr_or_dsh {
@@ -134,8 +134,8 @@
 
             bindings = <
 &kp F12  &kp F1     &kp F2         &kp F3            &kp F4     &kp F5                           &kp F6  &kp F7          &kp F8          &kp F9           &kp C_MUTE  &kp C_VOL_UP
-&trans   &kp CARET  &kp LESS_THAN  &kp GREATER_THAN  &kp MINUS  &kp PLUS                         &trans  &trans          &kp UP_ARROW    &trans           &trans      &kp C_VOL_DN
-&trans   &kp EXCL   &kp ASTRK      &kp SLASH         &kp EQUAL  &kp AMPERSAND                    &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans      &trans
+&trans   &kp CARET  &kp LESS_THAN  &kp GREATER_THAN  &kp SLASH  &kp ASTERISK                     &trans  &trans          &kp UP_ARROW    &trans           &trans      &kp C_VOL_DN
+&trans   &kp EXCL   &kp MINUS      &kp PLUS          &kp EQUAL  &kp AMPERSAND                    &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans      &kp DOUBLE_QUOTES
 &trans   &kp TILDE  &kp PERCENT    &kp SEMICOLON     &kp COLON  &kp PIPE       &trans    &trans  &trans  &trans          &trans          &trans           &trans      &trans
                                    &trans            &trans     &trans         &trans    &trans  &trans  &trans          &tog 2
             >;
@@ -154,7 +154,7 @@
             bindings = <
 &kp F12  &kp F1  &kp F2          &kp F3          &kp F4           &kp F5                       &kp F6       &kp F6        &kp F8                &kp F9                 &kp F10            &kp F11
 &trans   &trans  &trans          &kp UP_ARROW    &trans           &trans                       &kp DOLLAR   &kp PIPE      &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp BACKSLASH      &kp MINUS
-&trans   &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans                       &kp HASH     &kp QUESTION  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DOUBLE_QUOTES  &trans
+&trans   &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans                       &kp HASH     &kp QUESTION  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DOUBLE_QUOTES  &kp DOUBLE_QUOTES
 &trans   &trans  &trans          &trans          &trans           &trans  &trans    &trans     &kp AT_SIGN  &kp GRAVE     &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp EXCL           &trans
                                  &tog 1          &trans           &trans  &trans    &kp ENTER  &trans       &trans        &trans
             >;
