@@ -50,6 +50,7 @@
 
             #binding-cells = <2>;
             tapping-term-ms = <400>;
+            flavor = "tap-preferred";
         };
 
         undrscr_or_dsh: undrscr_or_dsh {
@@ -104,21 +105,21 @@
 
         numpad_left {
             bindings = <
-&kp LOCKING_NUM  &kp STAR  &kp N7  &kp N8  &kp N9   &kp MINUS                    &trans  &trans          &trans          &trans           &trans  &trans
-&trans           &kp STAR  &kp N4  &kp N5  &kp N6   &kp PLUS                     &trans  &mkp MB1        &mmv MOVE_UP    &mkp MB2         &trans  &trans
-&trans           &kp FSLH  &kp N1  &kp N2  &kp N3   &kp RET                      &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &trans
-&trans           &kp FSLH  &kp N0  &kp N0  &kp DOT  &kp RET    &tog 1    &trans  &trans  &trans          &trans          &trans           &trans  &trans
-                                   &trans  &trans   &trans     &trans    &trans  &trans  &trans          &trans
+&kp LOCKING_NUM  &kp KP_MULTIPLY  &kp KP_NUMBER_7  &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp MINUS                       &trans  &trans          &trans          &trans           &trans  &trans
+&trans           &kp KP_MULTIPLY  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_PLUS                     &trans  &mkp MB1        &mmv MOVE_UP    &mkp MB2         &trans  &trans
+&trans           &kp KP_DIVIDE    &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_ENTER                    &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans  &trans
+&trans           &kp KP_DIVIDE    &kp KP_NUMBER_0  &kp KP_NUMBER_0  &kp KP_DOT       &kp KP_ENTER  &tog 1    &trans  &trans  &trans          &trans          &trans           &trans  &trans
+                                                   &trans           &trans           &trans        &trans    &trans  &trans  &trans          &trans
             >;
         };
 
         numpad_right {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                    &kp STAR  &kp N7  &kp N8  &kp N9   &kp MINUS  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &kp STAR  &kp N4  &kp N5  &kp N6   &kp PLUS   &trans
-&trans  &trans  &trans  &trans  &trans  &trans                    &kp FSLH  &kp N1  &kp N2  &kp N3   &kp RET    &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans    &tog 2  &kp FSLH  &kp N0  &kp N0  &kp DOT  &kp RET    &kp RET
-                        &trans  &trans  &trans  &trans    &trans  &trans    &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &kp KP_MULTIPLY  &kp KP_N7        &kp KP_NUMBER_8  &kp KP_NUMBER_9  &kp KP_SUBTRACT  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &kp KP_MULTIPLY  &kp KP_NUMBER_4  &kp KP_NUMBER_5  &kp KP_NUMBER_6  &kp KP_PLUS      &trans
+&trans  &trans  &trans  &trans  &trans  &trans                    &kp KP_DIVIDE    &kp KP_NUMBER_1  &kp KP_NUMBER_2  &kp KP_NUMBER_3  &kp KP_ENTER     &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans    &tog 2  &kp KP_DIVIDE    &kp KP_NUMBER_0  &kp KP_NUMBER_0  &kp KP_DOT       &kp KP_ENTER     &kp KP_EQUAL
+                        &trans  &trans  &trans  &trans    &trans  &trans           &trans           &trans
             >;
         };
 
