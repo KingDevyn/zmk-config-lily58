@@ -62,6 +62,24 @@
         };
     };
 
+    macros {
+        z_undo: z_undo {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(Z)>, <&macro_press>;
+
+            label = "Z_UNDO";
+        };
+
+        shft_z_redo: shft_z_redo {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LS(Z))>, <&macro_press>;
+
+            label = "SHFT_Z_REDO";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -76,11 +94,11 @@
             //                     | ALT  | GUI  | LOWER|  SPACE |  | ENTER | RAISE| BSPC  | GUI   |
 
             bindings = <
-&kp ESC           &kp N1  &kp N2  &kp N3                       &kp N4        &kp N5                             &kp N6  &kp N7    &kp N8                   &kp N9   &kp N0    &bsp_or_del
-&kp TAB           &kp Q   &kp W   &kp E                        &kp R         &kp T                              &kp Y   &kp U     &kp I                    &kp O    &kp P     &undrscr_or_dsh
-&kp LEFT_SHIFT    &kp A   &kp S   &kp D                        &kp F         &kp G                              &kp H   &kp J     &kp K                    &kp L    &kp SEMI  &kp_tap_kp_hold RIGHT_SHIFT APOS
-&kp LEFT_CONTROL  &kp Z   &kp X   &kp C                        &kp V         &kp B   &kp LBKT     &kp RBKT      &kp N   &kp M     &kp COMMA                &kp DOT  &kp FSLH  &kp ENTER
-                                  &kp_tap_tog_hold 1 LEFT_GUI  &kp LEFT_ALT  &mo 4   &kp SPACE    &spc_or_entr  &mo 3   &kp BSPC  &kp_tap_tog_hold 2 RGUI
+&kp ESC           &kp N1  &kp N2  &kp N3                       &kp N4        &kp N5                             &kp N6  &kp N7       &kp N8                   &kp N9   &kp N0    &kp DELETE
+&kp TAB           &kp Q   &kp W   &kp E                        &kp R         &kp T                              &kp Y   &kp U        &kp I                    &kp O    &kp P     &undrscr_or_dsh
+&kp LEFT_SHIFT    &kp A   &kp S   &kp D                        &kp F         &kp G                              &kp H   &kp J        &kp K                    &kp L    &kp SEMI  &kp_tap_kp_hold RIGHT_SHIFT APOS
+&kp LEFT_CONTROL  &kp Z   &kp X   &kp C                        &kp V         &kp B   &z_undo      &shft_z_redo  &kp N   &kp M        &kp COMMA                &kp DOT  &kp FSLH  &kp EQUAL
+                                  &kp_tap_tog_hold 1 LEFT_GUI  &kp LEFT_ALT  &mo 4   &kp SPACE    &kp ENTER     &mo 3   &bsp_or_del  &kp_tap_tog_hold 2 RGUI
             >;
         };
 
@@ -134,11 +152,11 @@
             //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&kp F12  &kp F1  &kp F2          &kp F3          &kp F4           &kp F5                       &kp F6       &kp F6                &kp F8                 &kp F9           &kp F10            &kp F11
-&trans   &trans  &trans          &kp UP_ARROW    &trans           &trans                       &kp GRAVE    &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp DOLLAR       &kp BACKSLASH      &kp MINUS
-&trans   &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans                       &kp HASH     &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp TILDE        &kp DOUBLE_QUOTES  &trans
-&trans   &trans  &trans          &trans          &trans           &trans  &trans    &trans     &kp AT_SIGN  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp EXCLAMATION  &kp SINGLE_QUOTE   &trans
-                                 &trans          &trans           &trans  &trans    &kp ENTER  &trans       &trans                &trans
+&kp F12  &kp F1  &kp F2          &kp F3          &kp F4           &kp F5                       &kp F6       &kp F6        &kp F8                &kp F9                 &kp F10            &kp F11
+&trans   &trans  &trans          &kp UP_ARROW    &trans           &trans                       &kp DOLLAR   &kp PIPE      &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp BACKSLASH      &kp MINUS
+&trans   &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans                       &kp HASH     &kp QUESTION  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp DOUBLE_QUOTES  &trans
+&trans   &trans  &trans          &trans          &trans           &trans  &trans    &trans     &kp AT_SIGN  &kp GRAVE     &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp EXCL           &trans
+                                 &trans          &trans           &trans  &trans    &kp ENTER  &trans       &trans        &trans
             >;
         };
 
