@@ -133,11 +133,11 @@
             //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&kp F12  &kp F1     &kp F2         &kp F3            &kp F4     &kp F5                           &kp F6  &kp F7          &kp F8          &kp F9           &kp C_MUTE  &kp C_VOL_UP
-&trans   &kp CARET  &kp LESS_THAN  &kp GREATER_THAN  &kp SLASH  &kp ASTERISK                     &trans  &trans          &kp UP_ARROW    &trans           &trans      &kp C_VOL_DN
-&trans   &kp EXCL   &kp MINUS      &kp PLUS          &kp EQUAL  &kp AMPERSAND                    &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans      &kp DOUBLE_QUOTES
-&trans   &kp TILDE  &kp PERCENT    &kp SEMICOLON     &kp COLON  &kp PIPE       &trans    &trans  &trans  &trans          &trans          &trans           &trans      &trans
-                                   &trans            &trans     &trans         &trans    &trans  &trans  &trans          &tog 2
+&kp F12  &kp F1     &kp F2         &kp F3            &kp F4     &kp F5                          &kp F6  &kp F7          &kp F8          &kp F9           &kp C_MUTE  &kp C_VOL_UP
+&trans   &kp CARET  &kp LESS_THAN  &kp GREATER_THAN  &kp SLASH  &kp ASTERISK                    &trans  &trans          &kp UP_ARROW    &trans           &trans      &kp C_VOL_DN
+&trans   &kp AMPS   &kp MINUS      &kp PLUS          &kp EQUAL  &kp EXCL                        &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans      &kp DOUBLE_QUOTES
+&trans   &kp TILDE  &kp PERCENT    &kp SEMICOLON     &kp COLON  &kp PIPE      &trans    &trans  &trans  &trans          &trans          &trans           &trans      &trans
+                                   &trans            &trans     &trans        &trans    &trans  &trans  &trans          &tog 2
             >;
         };
 
