@@ -136,7 +136,7 @@
             bindings = <
 &kp F12  &kp F1     &kp F2         &kp F3            &kp F4     &kp F5                          &kp F6  &kp F7          &kp F8          &kp F9           &kp C_MUTE  &kp C_VOL_UP
 &trans   &kp CARET  &kp LESS_THAN  &kp GREATER_THAN  &kp SLASH  &kp ASTERISK                    &trans  &trans          &kp UP_ARROW    &trans           &trans      &kp C_VOL_DN
-&trans   &kp AMPS   &kp MINUS      &kp PLUS          &kp EQUAL  &kp EXCL                        &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans      &kp DOUBLE_QUOTES
+&trans   &kp AMPS   &kp MINUS      &kp PLUS          &kp EQUAL  &kp EXCL                        &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp COLON   &kp DOUBLE_QUOTES
 &trans   &kp TILDE  &kp PERCENT    &kp SEMICOLON     &kp COLON  &kp PIPE      &trans    &trans  &trans  &trans          &trans          &trans           &trans      &trans
                                    &trans            &trans     &trans        &trans    &trans  &trans  &trans          &tog 2
             >;
@@ -153,10 +153,10 @@
             //                     |      |      |      |        |  |       |      |       |       |
 
             bindings = <
-&kp F12  &kp F1  &kp F2          &kp F3          &kp F4           &kp F5                              &kp F6       &kp F6        &kp F8                &kp F9                 &kp F10            &kp F11
-&trans   &trans  &mkp MB2        &mmv MOVE_UP    &mkp MB1         &kp PG_UP                           &kp DOLLAR   &kp PIPE      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp BACKSLASH      &kp MINUS
-&trans   &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp PAGE_DOWN                       &kp HASH     &kp QUESTION  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp DOUBLE_QUOTES  &kp DOUBLE_QUOTES
-&trans   &trans  &trans          &trans          &trans           &trans         &trans    &trans     &kp AT_SIGN  &kp GRAVE     &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp EXCL           &trans
+&kp F12  &kp F1  &kp F2          &kp F3          &kp F4           &kp F5                              &kp F6       &kp F6        &kp F8                &kp F9                 &kp F10        &kp F11
+&trans   &trans  &mkp MB2        &mmv MOVE_UP    &mkp MB1         &kp PG_UP                           &kp DOLLAR   &kp PIPE      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp BACKSLASH  &kp MINUS
+&trans   &trans  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &kp PAGE_DOWN                       &kp HASH     &kp QUESTION  &kp LEFT_BRACE        &kp RIGHT_BRACE        &kp COLON      &kp DOUBLE_QUOTES
+&trans   &trans  &trans          &trans          &trans           &trans         &trans    &trans     &kp AT_SIGN  &kp GRAVE     &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp EXCL       &trans
                                  &tog 1          &trans           &trans         &trans    &kp ENTER  &trans       &trans        &trans
             >;
         };
